@@ -4,6 +4,7 @@ import {ApolloProvider} from "react-apollo";
 import ApolloClient from "apollo-boost";
 import Home from "./components/Home";
 import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import Callback from './components/Callback';
 
 const client = new ApolloClient({uri: "https://w5xlvm3vzz.lp.gql.zone/graphql"});
 
@@ -12,7 +13,10 @@ class App extends Component {
     return (
       <ApolloProvider client={client}>
         <Router>
-          <Route exact path="/" component={Home}/>
+          <div>
+            <Route exact path="/" component={Home}/>
+            <Route path="/callback" component={Callback}/>
+          </div>
         </Router>
       </ApolloProvider>
     );

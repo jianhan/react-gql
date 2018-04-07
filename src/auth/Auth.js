@@ -1,14 +1,13 @@
 import decode from 'jwt-decode';
-import { browserHistory } from 'react-router';
 import auth0 from 'auth0-js';
 const ID_TOKEN_KEY = 'id_token';
 const ACCESS_TOKEN_KEY = 'access_token';
 
-const CLIENT_ID = '{AUTH0_CLIENT_ID}';
-const CLIENT_DOMAIN = '{AUTH0_DOMAIN}';
-const REDIRECT = 'YOUR_CALLBACK_URL';
-const SCOPE = '{SCOPE}';
-const AUDIENCE = 'AUDIENCE_ATTRIBUTE';
+const CLIENT_ID = 'gczbvbnf4x1sjssDEeyLSTsJUaEtpa3H';
+const CLIENT_DOMAIN = 'goauth.au.auth0.com';
+const REDIRECT = 'http://localhost:3000/callback';
+const SCOPE = 'openid';
+const AUDIENCE = 'http://localhost:3000';
 
 var auth = new auth0.WebAuth({
     clientID: CLIENT_ID,
@@ -27,7 +26,6 @@ export function login() {
 export function logout() {
     clearIdToken();
     clearAccessToken();
-    browserHistory.push('/');
 }
 
 export function requireAuth(nextState, replace) {

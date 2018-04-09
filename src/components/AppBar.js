@@ -7,7 +7,7 @@ import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
-import { login, logout, isLoggedIn } from '../auth/Auth';
+import { login } from '../auth/Auth';
 
 const styles = {
     root: {
